@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>변수선언(var, let, const)</title>
+</head>
+<body>
+    <script>
+        // var
+            var x = 5;
+            var y = 6;
+            var z = x + y;
+
+            console.log(" x = " + x);
+            console.log(" y = " + y);
+            console.log(" z = " + z);
+
+            // document.write("x = " + x);
+            // document.write("y = " + y);
+            // document.write("z = " + z);
+
+            var x = 23;
+            z = x + 1;
+            console.log("z = " + z);
+
+        // let -- ES6에서 추가된 기능
+        let x1 = 5;
+        let y1 = 6;
+        let z1 = x1 + y1;
+
+        console.log("z1 = " + z1);
+        console.log("x1 = " + x1);
+
+        // let x1 = 7;      -- 변수명의 재선언시 에러가 발생
+        x1 = 7;             // 정상적으로 실행됨.
+
+        // const
+        const PI = 3.141592;
+
+        // PI = 3.14;          // 에러 발생
+        // const PI = 1.2;     // 에러 발생
+
+        console.log("PI = " + PI);
+
+
+
+
+    </script>
+</body>
+</html>
