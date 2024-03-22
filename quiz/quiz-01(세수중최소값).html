@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>세 수 중 최솟값 구하기</title>
+</head>
+<body>
+    <script>
+        function solution(a, b, c) {
+            let answer;
+
+            // insert code
+
+            /*
+            if(a > b &&  c > b) {
+                answer = b;
+            }
+            else if(b > c &&  b > c) {
+                answer = c;
+            }
+            else {
+                answer = a;
+            }
+            */
+
+            if(a<b) answer=a;
+            else answer=b;
+
+            if(c<answer) answer=c;
+
+            return answer;
+        }
+        console.log(solution(11, 12, 4));
+    </script>
+</body>
+</html>

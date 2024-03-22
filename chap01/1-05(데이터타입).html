@@ -38,7 +38,8 @@
         let n1 = null;
         console.log(n1);
 
-        // Object
+        // 2024.03.22
+        // Object --> 선언 후 초기화
         let person1 = {}; 
         person1.firstName = "홍";
         person1.lastName = "길동";
@@ -46,7 +47,95 @@
 
         console.log(person1);
         
+        // 선언과 동시에 초기화
+        let person2 = {
+            firstName:"길순",
+            lastName:"홍",
+            age:10
+        }
+        console.log(person2);
 
+        let person3 = {}; // 객체 선언
+        person3["firstName"] = "철수";
+        person3["lastName"] = "김";
+        person3["age"] = 10;
+
+        person2.email = "hong@gmail.com"; // 이렇게 멤버변수를 추가해 주면 됨.
+        console.log(person2);
+
+        console.log(person1.firstName);
+        console.log(person1.lastName);
+        console.log(person1.age);
+        
+        person1.school = "미림";
+        console.log(person1.school);
+
+        document.write(person2.firstName);
+        document.write(person2.lastName);
+
+        // 배열 - Array
+        let car = ["현대", "기아", "볼보", "테슬라", "벤츠"];
+        console.log(car[0]);
+        console.log(car[1]);
+        console.log(car[2]);
+        console.log(car[3]);
+        console.log(car[4]);
+
+        let num = [3, 7, 2, 9, 12];
+        console.log(num[0]);
+        console.log(num[2]);
+        console.log(num[4]);
+        
+        let arr1 = ["현대", 3, undefined, null];
+        console.log(arr1[0]);
+        console.log(arr1[1]);
+        console.log(arr1[2]);
+        console.log(arr1[3]);
+        
+        let arr2 = [person1, person2, person3];
+        console.log(arr2[0]);
+        console.log(arr2[1]);
+        console.log(arr2[2]);
+        
+        let arr3 = [];
+        arr3[0] = 23;
+        arr3[1] = "대한민국";
+        console.log(arr3[0]);
+        console.log(arr3[1]);
+        
+        let arr4 = [];
+        arr4.push(2024);    // 자기 마음대로 0번째 방에 들어간다
+        arr4.push("BTS");   // 자기 마음대로 1번째 방에 들어간다
+        arr4.push(7);
+        arr4.push(3.14);
+        arr4.push(null);
+        arr4.push(undefined);
+        
+        console.log(arr4[0]);
+        console.log(arr4[1]);
+        console.log(arr4[2]);
+        console.log(arr4[3]);
+        console.log(arr4[4]);
+        console.log(arr4[5]);
+
+        for(var i=0; i<arr4.length; i++) {
+            console.log(arr4[i]);
+            document.write(arr4[i] + "<br>");
+        }
+
+        // Boolean 참/ 거짓 - true or false
+        let isAdult = true;
+        let num1 = 5;
+        let num2 = 7;
+        console.log(num1 > num2);
+
+        console.log(typeof num1);   // type을 봐주는 연산자 = typeof
+        console.log(typeof isAdult);
+        console.log(typeof name1);
+        console.log(typeof person1);
+        console.log(typeof arr4);   // 배열을 object로 처리한다.
+        
+        
 
     </script>
 </body>

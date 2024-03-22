@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>제어문(if, switch)</title>
+</head>
+<body>
+    <script>
+    // if
+    // var age = 19;
+    // if(age>18) {
+    //    console.log("당신은 성인입니다.");
+    // }
+
+    // if - else
+    /*
+    var age = 17;
+    if(age > 18) {
+        console.log("당신은 성인입니다.");
+    }
+    else {
+        console.log("당신은 성인이 아닙니다.");
+    }
+    */
+
+    // if else if ..... else
+    /*
+    var hour = 14;
+    if(hour < 10) {
+        console.log("Good morning~~");
+    }
+    else if(hour < 17) {
+        console.log("Good afternoon~~");
+    }
+    else if(hour < 21) {
+        console.log("Good evening~~");
+    }
+    else {
+        console.log("Good night");
+    }
+    */
+
+    /*
+    var age = 17;
+    var isAdult = false;
+
+    if(age > 18) {
+        isAdult = true;
+    }
+    // else {           // 굳이 기술할 필요가 없음.
+    //    isAdult = false;
+    // }
+    */
+
+    /*
+    var d = new Date();
+    var day = d.getDay();         // 오늘의 요일이 나옴
+    console.log(day);             // 일요일 : 0 ~ 
+    var dayName = "";
+    */
+
+    /*
+    switch(day) {
+        case 0 :
+            dayName = "일요일";
+            break;
+        case 1 :
+            dayName = "월요일";
+            break;
+        case 2 :
+            dayName = "화요일";
+            break;
+        case 3 :
+            dayName = "수요일";
+            break;
+        case 4 :
+            dayName = "목요일";
+            break;
+        case 5 :
+            dayName = "금요일";
+            break;
+        case 6 :
+            dayName = "토요일";
+            break;
+        default :
+            dayName = "무슨 요일";
+            break;
+    } // switch
+
+    console.log(dayName);
+    */
+
+    // switch문을 if문으로 변환
+
+    /*
+    if(day===0) {
+        dayName = "일요일";
+    }
+    else if(day===1){
+        dayName = "월요일";
+    }
+    else if(day===2){
+        dayName = "화요일";
+    }
+    else if(day===3){
+        dayName = "수요일";
+    }
+    else if(day===4){
+        dayName = "목요일";
+    }
+    else if(day===5){
+        dayName = "금요일";
+    }
+    else if(day===6){
+        dayName = "토요일";
+    }
+
+    console.log("오늘은 " + dayName + " 입니다.")
+    */
+
+    // if 조건문을 이용해서 로그인 처리
+    /*
+    var id = prompt("아이디를 입력해 주세요.");
+    // console.log(id);
+
+    if(id==="choi") {
+        var password = prompt("비밀번호를 입력해 주세요.");
+
+        if(password==="1234") {
+            alert(id + "님은 회원입니다.");
+        }
+        else {
+            alert(id + "님 비밀번호를 확인해 주세요.");
+        }
+
+       // console.log(id + "님은 회원입니다.");
+       alert(id + "님은 회원입니다.");
+    }
+    else {
+       // console.log("아이디를 다시 한 번 확인해 주세요.");
+       alert("아이디를 다시 한 번 확인해 주세요.");
+    }
+    */
+
+    var id = prompt("아이디를 입력해 주세요.");
+    var password = prompt("비밀번호를 입력해 주세요.");
+    if(id==="choi" && password==="1234") {
+        alert(id + "님이 로그인하셨습니다. 환영합니다.");
+    }
+    else {
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+    }
+
+    </script>
+</body>
+</html>
