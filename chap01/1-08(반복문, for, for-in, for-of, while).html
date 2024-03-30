@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>반복문(for,for-in,for-of,while)</title>
+</head>
+<body>
+    <script>
+        for(var i=0; i<5; i++) {
+            console.log("The 숫자 is " + i);
+        }
+
+    //    console.log(i);      // 에러는 안 나지만 for 문 밖에서 i 쓰지 말자
+        
+        var i = 1;
+        var len = 10;
+        var total = 0;
+
+        for(; i<=len;) {
+            total += i;
+            i++;
+        }
+
+        console.log("총 합은 = " + total);
+
+        // break, continue
+        for(var i=0; i<5; i++) {
+
+            if(i===3) {
+                // break;
+                continue;
+            }
+            console.log("The 숫자 is " + i);
+        }
+
+        var numbers = [43, 23, 5, 7, 99, 12, 19];
+
+        var len = numbers.length;
+        for(var i=0; i<len; i++) {
+            // console.log(i);     // 배열의 인덱스 길이 찍기
+            console.log(numbers[i]);    // 배열의 인덱스 값 찍기
+        }
+
+        // 향상된 for 문
+        for(var i in numbers) {     // 인덱스의 값, 번호 다 가져올 수 있음.
+            console.log(i);     // 배열의 인덱스 번호 출력
+            console.log(numbers[i]);
+        }
+
+        for(var num of numbers) {       // 바로 인덱스 안의 값을 가져옴
+            console.log(num);
+            // console.log(numbers[num]); -> undefined
+        }
+
+
+
+
+    </script>
+</body>
+</html>

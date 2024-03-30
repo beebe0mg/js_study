@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>String 내장 함수</title>
+</head>
+<body>
+    <script>
+        // length : 문자열의 길이를 리턴
+        var txt = "ABCDEFGHIJKLM";
+        console.log(txt.length);
+
+        // indexOf
+        var str = "Please locate where 'locate'";
+        console.log(str.indexOf("locate")); // 출력값 : 7 // locate 라는 단어가 시작되는 번호가 어디니? -> 첫 번째 locate의 위치를 알려줌
+        console.log(str.indexOf("choi"));   // 출력값 : -1 // 없으면 -1
+      
+        if(str.indexOf("locate") > -1) {    // 해당 되는 단어가 있다.
+            console.log("locate 문자 발견");
+        }
+
+        // lastIndexOf
+        console.log(str.lastIndexOf("locate"));  // 출력값 : 21   // 문장의 끝에서부터 마지막 locate 단어의 위치를 찾음 (l을 찾아야 함)
+   
+        // search
+        console.log(str.search("locate"));  // = indexOf
+
+        // slice
+        var str = "Apple, Banana, Kiwi";
+        console.log(str.slice(7,13));  // 출력값 : Banana // 7, 13은 인덱스 값, 파이썬과 같이 13-1=12까지. 7 <= a < 13
+        console.log(str.slice(7));  // 출력값 : Banana, Kiwi // 7부터 끝까지.
+        console.log(str.slice(-12, -6));  // 출력값 : Banana // 파이썬과 똑같은 논리, 잘 쓰이지 않음
+        console.log(str.slice(-12));  // 출력값 : Banana, Kiwi // -12 부터 끝까지.
+        
+        // substring    // slice와 똑같음
+        console.log(str.substring(7, 13)); // 출력값 : Banana
+
+        // substr
+        console.log(str.substr(7, 6)); // 출력값 : Banana // 7번 인덱스부터 여섯 글자 가져와라.
+
+        var jumin1 = "070821";
+        console.log(jumin1.substr(0,2));    // 출력값 : 07
+        console.log(jumin1.substr(2,2));    // 출력값 : 08
+        console.log(jumin1.substr(4,2));    // 출력값 : 21
+
+        var jumin2 = "2007-08-21";  // 년도 띄우기
+        console.log(jumin2.substring(0, jumin2.indexOf("-")));
+
+        // replace - 원하는 문자열 바꾸기
+        var str1 = "Please visit here";
+        var str2 = str1.replace("here", "there");
+        console.log(str2);
+        
+        var str3 = "Please visit Here here here";
+        var str4 = str3.replace("here", "there");   // 제일 앞에 거 하나만 바뀜. 대소문자 구분함
+        console.log(str4);
+
+        // 정규 표현식
+        var str5 = "Please visit here here here";
+        var str6 = str5.replace(/here/g, "there");  // g는 global의 약자 g 쓰면 here가 전부 there로 바뀜
+        console.log(str6);
+
+        var str5 = "Please visit Here HERE HeRe";
+        var str6 = str5.replace(/here/gi, "there");  // gi로 쓰면 대소문자 구분 안 하고 싹 다 바꿈. i -> ignore
+        console.log(str6);
+
+        // 대문자로 : uppercase
+        var str9 = "Please visit Here HERE HeRe";
+        console.log(str9.toUpperCase());
+
+        // 소문자로 : lowercase
+        var str10 = "Please visit Here HERE HeRe";
+        console.log(str10.toLowerCase());
+
+        // 데이터베이스 : JOHN, john, John 다 같은 존인데도 다른 사람임
+        
+    </script>
+</body>
+</html>

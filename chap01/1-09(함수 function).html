@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>함수(function)</title>
+</head>
+<body>
+    <script>
+       // var tax = 10* 0.1;
+       // console.log(tax); 별로 안 좋음 무식한 방법
+
+       var income = 10;
+       // var vat = 0.1;
+       // var tax = income * vat;
+
+       // console.log(tax); 이것도 별로 안 좋음
+
+       // 가장 좋은 방법 : 함수를 사용
+       // function 함수이름() {
+       //     // return
+       // }
+
+       // function calculateTax(income) {
+       //   var vat = 0.1;
+       //   var tax = income * vat;
+       //   return tax;
+       // }
+
+       // console.log(calculateTax(10));
+       // console.log(calculateTax(15));
+       
+       // function calculateTax(income, vat) {     //income, vat -> 매개변수, 파라미터
+       //      var tax = income * vat;
+       //      return tax;
+       // }
+
+       // console.log(calculateTax(10, 0.1));
+       // console.log(calculateTax(15, 0.2));
+
+       function calculator(x1, y1, operator) {
+            if(operator === "+") {
+                return x1 + y1;
+            }
+            else if(operator === "-") {
+                return x1 - y1;
+            }
+            else if(operator === "*") {
+                return x1 * y1;
+            }
+            else if(operator === "/") {
+                return x1 / y1;
+            }
+       }
+
+       // 불필요한 plus 변수 선언
+       // var plus = calculator(5, 7, "+");
+       // console.log(plus);
+
+       console.log(calculator(5, 7, "+"));
+       console.log(calculator(5, 7, "-"));
+       console.log(calculator(5, 7, "*"));
+       console.log(calculator(5, 7, "/"));
+    </script>
+</body>
+</html>

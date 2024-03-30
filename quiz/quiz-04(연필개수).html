@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(n) {
+            // let answer = (n/12);
+
+            // if(n%2!==0) {
+            //    answer = (n/12)+1;
+            // }
+            // else {
+            //    answer = (n/12);
+            // }
+
+            // 방법 1
+            // if((n%12)!== 0) {
+            //    answer = parseInt((n/12) + 1);
+            // }
+            // return answer;
+            
+            // 방법 2
+            let answer = Math.ceil(n/12);   // 무조건 올려서, 값이 정수면 그냥 출력
+            return answer;
+
+            // ceil() 함수 : 무조건 올림
+            // console.log(Math.ceil(2.11));
+
+            // floor() 함수 : 무조건 내림
+            // console.log(Math.floor(2.11));
+            
+            // round() 함수 : 반올림
+            // console.log(Math.round(2.44));
+           
+        }
+        // console.log(solution(25)); // 출력값 3
+        // console.log(solution(178)); // 출력값 15
+    </script>
+</body>
+</html>
