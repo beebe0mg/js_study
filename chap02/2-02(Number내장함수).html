@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Number 내장함수</title>
+</head>
+<body>
+    <script>
+        console.log(Number.MAX_SAFE_INTEGER);
+        console.log(Number.MIN_SAFE_INTEGER);
+
+        // toString()
+        var x1 = 123;
+        console.log(x1+1);
+        console.log(x1.toString()+1); // String으로 바뀜 --> "123"
+        console.log(x1.toString(2)); // n진수로 바뀜, 2진수로 바뀌어서 나옴
+
+        // toFixed() : 지정된 소수점 자릿수까지 반올림으로 표기
+        var x2 = 123999.567243;
+        console.log(x2.toFixed(2)) // 소수점 세 번째 자리에서 반올림해서 두 번째 자리까지 나타냄
+
+        // toPrecision() : 정수까지 포함
+        var x3 = 9.567
+        console.log(x3.toPrecision(2)); // 출력값 : 9.6 : 정수까지 포함된 자릿수
+
+        var x4 = Number("10"); // toString과 반대 문자열을 숫자로 바꿔줌
+        console.log(x4+1);
+
+        var x5 = Number(true); // 이것도 1로 바뀜
+        console.log(x5);
+
+        console.log(Number("           10          ")); // 이것도 해줌
+        console.log(Number("           10")); // 이것도 해줌
+        console.log(Number("10.33"));
+        console.log(Number("10,33")); // 이건 안 됨
+        console.log(Number("choi")); // 이건 안 됨
+        console.log(Number("10 30")); // 이건 안 됨 (쉼표, 문자, 공백 안 됨)
+
+
+    </script>
+</body>
+</html>

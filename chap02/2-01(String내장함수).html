@@ -72,6 +72,38 @@
 
         // 데이터베이스 : JOHN, john, John 다 같은 존인데도 다른 사람임
         
+        var txt1 = "Hello";
+        var txt2 = "world"
+        var txt3 = txt1 + " " + txt2;
+        console.log(txt3);
+
+        console.log(txt1.concat(" ", txt2));
+        console.log(txt1.concat(" ", "Hong", " Love ", txt2));
+
+        // padStart : 자릿수 통일해 주기
+        var str11 = "1234";
+        // console.log(str11.padStart(8, 0)); // 8자리에 (앞)빈 곳을 0으로 채워줌
+        console.log("C-" + str11.padStart(8, 0)); // 8자리에 빈 곳을 0으로 채워줌
+
+        // 특정 자릿수를 통일하기 위해서 사용
+        var str12 = "5"
+        console.log(str12.padStart(2,0));
+
+        var str12 = "5"
+        console.log(str12.padEnd(4,0)); // (뒤) 빈 곳을 0으로 채워줌
+   
+        // charAt() --> indexOf 와 반대 이건 위치 출력 charAt()는 위치에 있는 값 출력
+        var str13 = "Hello World";
+        console.log(str13.charAt(1)); // 위치에 있는 값 출력
+
+        // split 별 세 개로 중요함
+        var tags = "키보드 기계식 블루투스 휠마우스 광마우스";
+        var arr1 = tags.split(" "); // 공백을 기준으로 문자열을 배열로 바꿔줌
+        console.log(arr1); 
+
+        var birthday = "2007-08-28";
+        var arr2 = birthday.split("-");
+        console.log(arr2); // 0번 방은 년도, 1번 방은 월, 2번 방은 일
     </script>
 </body>
 </html>

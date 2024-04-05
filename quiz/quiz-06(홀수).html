@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>홀수</title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            let answer = [];
+            let sum = 0, min = Number.MAX_SAFE_INTEGER;
+            /*
+            for(let i=0; i<=arr.length; i++) {
+                if(arr[i]%2 === 1) {
+                    answer[0] += i;
+                    answer[1] = Math.min(...arr);
+                }
+            }
+            */
+
+            for(let x of arr) {
+               // console.log(x); // 배열의 값 바로 가져옴
+                if(x%2 === 1) {
+                    // console.log(x);
+                    sum += x;
+                    if(x<min) min = x;
+                }
+            } // for
+            answer[0] = sum;
+            answer[1] = min;
+
+            answer.push(sum); // 자동으로 0번째 방에다가 수를 넣어줌 그냥 순서대로
+            answer.push(min); // 자동으로 0번째 방에다가 수를 넣어줌 그냥 순서대로
+
+            return answer;
+        }
+        arr = [12, 77, 36, 41, 53, 92, 85];
+        console.log(solution(arr));
+    </script>
+</body>
+</html>
