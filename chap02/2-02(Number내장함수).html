@@ -34,6 +34,17 @@
         console.log(Number("choi")); // 이건 안 됨
         console.log(Number("10 30")); // 이건 안 됨 (쉼표, 문자, 공백 안 됨)
 
+        //parseInt()
+        console.log(Number("3.14"));       // 이건 3.14 --> 3.14
+        console.log(parseInt("10") + 1);   // 이건 3.14 --> 3     
+        console.log(parseInt("10 20 30"));   // --> 10     
+        console.log(parseInt("24 years old"));   // --> 24     
+        console.log(parseInt("years 24 old"));   // NaN
+        
+        //parseFloat()  --> parseInt() + Number
+        console.log(parseFloat("10"));
+        console.log(parseFloat("13.9"));
+        console.log(parseFloat("13.9 choi")); // --> 13.9
 
     </script>
 </body>

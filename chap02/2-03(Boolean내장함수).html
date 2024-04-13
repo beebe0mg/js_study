@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Boolean 내장객체</title>
+</head>
+<body>
+    <script>
+        var x1 = true;      // var x1 = false;
+        var y1 = new Boolean(true);
+
+        console.log(typeof x1); // boolean
+        console.log(typeof y1); // class
+
+        console.log(x1 == y1);  // true (값 비교)
+        console.log(x1 === y1); // false (값, 타입 다 비교)
+
+        var x2 = "abc";
+        var y2 = new String("abc");
+
+        console.log(typeof x2);
+        console.log(typeof y2);
+
+        console.log(x2 == y2);
+        console.log(x2 === y2);
+
+        console.log(Boolean(10>9));     // True를 Object 타입으로 찍음
+        console.log(10>9); // 이건 Boolean 타입으로 찍음
+
+        var x = 0;
+        console.log(x);
+        console.log(Boolean(x));    // false
+
+        var x = "";
+        console.long(Boolean(x));
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<html>
+<head>
+    <title>Array 내장함수</title>
+</head>
+<body>
+    <div id = "div1">안녕하세요?</div>
+
+    <script>
+        // toString()
+        var fruits1 = ["Banana", "Orange", "Apple"];
+        console.log(fruits1.toString());    // 배열을 문자열로 바꿔줌
+        
+        // join()
+        console.log(fruits1.join("***")); // 문자열로 만들어주는데 중간에 *** 넣어서 출력 해 줌
+        
+        var txt1 = "Banana<br>";
+        txt1 += "Orange<br>";
+        txt1 += "Apple<br>";
+        console.log(txt1); // 콘솔창
+        document.getElementById("div1").innerHTML = txt1; // html 창
+        
+        var arr1 = [];
+        arr1.push("Banana");
+        arr1.push("Orange");
+        arr1.push("Apple");
+        console.log(arr1);
+        document.getElementById("div1").innerHTML = arr1.join("<br>"); // .join("<br") 붙여서 써줌
+        
+        // pop() : 배열의 가장 마지막 항목을 제거하여 리턴함
+        var fruits2 = ["Banana", "Orange", "Apple"];
+        var arr2 = fruits2.pop(); // Apple
+        console.log(arr2);
+        console.log(fruits2);
+
+        // push() : 배열의 가장 마지막에 새로운 항목을 추가
+        fruits2.push("Kiwi");
+        console.log(fruits2);
+
+        // shift() : 배열의 첫번째 항목을 제거하여 리턴함.
+        var fruits3 = ["Banana", "Orange", "Apple"];
+        var str = fruits3.shift();
+        console.log(str);
+        console.log(fruits3);
+        
+        // unshift() : 배열의 첫번째에 새로운 항목(아이템) 추가함.
+        var fruits4 = ["Banana", "Orange", "Apple"];
+        fruits4.unshift("Lemon");
+        console.log(fruits4);
+        
+        fruits4[0] = "Grape"; // Lemon --> Grape
+        console.log(fruits4)
+        console.log(fruits4.length);
+        fruits4[fruits4.length-1] = "Peach";
+        console.log(fruits4);        
+        
+        // splice(a, b) : a = 시작 위치, b = 삭제할 항목 수
+        var fruits5 = ["Banana", "Orange", "Apple"];
+        // fruits5.splice(1, 2); // Orange부터 두 개 삭제해 Banana만 남음
+        // console.log(fruits5);       
+        fruits5.splice(1, 1, "Lemon", "Kiwi"); // Banana Lemon Kiwi Apple 순서로 출력
+        console.log(fruits5);       
+        
+        // concat() : 두 개의 배열을 하나로 만들어줌
+        var BTS1 = ["뷔"];
+        var BTS2 = ["정국", "RM"];
+        var BTS = BTS1.concat(BTS2);
+        console.log(BTS);
+        
+        // slice(a, b) : a부터 b-1까지 항목을 가져옴.
+        var fruits6 = ["Banana", "Orange", "Apple"];
+        var fruits7 = fruits6.slice(1, 2); // Orange만 가져옴
+        var fruits7 = fruits6.slice(1, 3); // Orange, Appple 가져옴
+        console.log(fruits7);
+        
+        // sort() : 정렬
+        var fruits8 = ["Banana", "Orange", "Apple", "Lemon", "Kiwi"];
+        console.log(fruits8.sort()); // 오름차순 정렬 A - Z
+
+        var points = [40, 100, 70, 21, 99];
+        // console.log(points.sort()); // 숫자를 문자로 인식해서 정렬해 주기 때문에 앞자리가 1인 100이 먼저 나옴
+
+        points.sort(function(a, b) {
+            if(a>b) 
+                return 1;   // retrun true 1, -1 이면 오름차순, -1, 1 이면 내림차순
+            else 
+                return -1;  // retrun false
+        });
+
+        points.sort(function(a, b){
+            return a - b;   // return b - a : 내림차순 
+        });
+        console.log(points);
+        console.log(points.reverse());
+
+        // object 정렬
+        var persons = [
+            {name : "유재석", point:78},
+            {name : "김종국", point:92},
+            {name : "양세찬", point:76},
+            {name : "하  하", point:81}
+        ];
+        
+        // console.log(persons.sort()); // ogject는 정렬이 안 된다.
+        persons.sort(function(a, b) {
+            if(a.point > b.point)
+                return 1; 
+            else
+                return -1;
+        });
+        console.log(persons);
+        
+        persons.sort(function(a, b) {
+            // 삼항 연산자 이용
+            return (a.point > b.point) ? 1 : -1;
+        });
+        console.log(persons);
+        
+        // ***** fiter() : 조건에 맞는 배열만 리턴
+        var persons = [
+            {name : "유재석", point:78},
+            {name : "김종국", point:92},
+            {name : "양세찬", point:76},
+            {name : "하  하", point:81}
+        ];
+
+        var pass = persons.filter( function(per){
+           return per.point > 80;
+        });
+        console.log(pass);
+
+        var persons = [
+            {name : "유재석", point:78, city:"서울"},
+            {name : "김종국", point:92, city:"대구"},
+            {name : "양세찬", point:76, city:"서울"},
+            {name : "하  하", point:81, city:"제주"}
+        ];
+
+        // filter()를 for문으로 구현하면 매우 복잡함.
+        var seoul = [];
+        for(var i=0; i<persons.length; i++) {
+            if(persons[i].city === "서울")
+            seoul.push(persons[i]);
+        }
+        console.log(seoul)
+        
+        var seoul = persons.filter(function(per) { // 어차피 배열을 리턴함
+            return per.city === "서울";
+        });
+        console.log(seoul);
+
+        // ***** reduce
+        var arr3 = [1,2,3,4];
+        var total = 0;
+        for(var x of arr3) {
+            total += x;
+        }
+        console.log(total);
+
+        // reduce(a,c)
+        // a: accumulator = 누산기
+        // c: currentValue = 현재값
+        var arr4 = [1, 2, 3, 4];
+        var total = arr4.reduce(function(a,c){
+            return a+c;
+        });
+        console.log(total);
+
+        // ***** map()
+
+    </script>
+</body>
+</html>
