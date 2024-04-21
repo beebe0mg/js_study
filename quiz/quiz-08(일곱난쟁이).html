@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            let answer=arr;
+            answer = arr;
+            
+            // 방법 1: 기존의 for문을 이용한 방식
+            // let sum = 0;
+            // for(var i=0; i<arr.length; i++) {
+            //    console.log(arr[i]);
+            //    sum+=arr[i];
+            // }
+            // console.log(sum);
+
+            // 방법 2 : for of를 이요한 방법
+            // let sum = 0;
+            // for(let x of arr) {
+            //    console.log(x);
+            //    sum += x;
+            // }
+            // console.log(sum);
+            
+            // 방법 3 : reduce() 사용
+            // let sum = arr.reduce(function(a,b){
+            //    return a+b;
+            // });
+            // console.log(sum);
+
+            // 방법 4 : arrow Function --> 나중에 다시 정리
+            // Array 함수인 splice와 reduce 씀
+            let sum = arr.reduce((a,b) => a+b);
+            // console.log(sum);
+
+            for(let i=0; i<arr.length; i++) {
+                for(let j=i+1; j<arr.length; j++) {
+                    // console.log(arr[i], arr[j]);
+                    if(sum - (arr[i]+arr[j]) === 100) {
+                        // console.log(arr[i],arr[j]);
+                        arr.splice(j,1);
+                        arr.splice(i,1);
+                    }
+                } // for j
+            } // for i
+
+            return answer;
+        }
+        var arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+        console.log(solution(arr));
+    </script>
+</body>
+</html>

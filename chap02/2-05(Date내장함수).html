@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Date 내장함수</title>
+</head>
+<body>
+    <script>
+        // var d1 = new Date(); // 오늘 해당을 출력
+        // console.log(d1)
+
+        // 월은 0부터 시작, 일은 1부터 시작
+        // var d2 = new Date(2024, 9, 9, 18, 30); // 년 월 일 시간 분
+        // console.log(d2);
+
+        // month 월이 0부터 시작하는 이유 : 글로벌 서비스
+        // 2024-04-19, 2024.04.19       <==> Apr 19 2024
+        // month_en = ["Jan", "Feb", "Mar" ...]
+        // month_fn = ["ddd", "ggg", "rrr" ...]
+        // month_sp = ["adasdf", "adfs", "tews" ...]
+
+        var d3 = new Date();
+        console.log(d3);
+
+        var year = d3.getFullYear();
+        console.log("Year ", year);
+        
+        var month = d3.getMonth();
+        console.log("Month ", month+1);
+        
+        var date = d3.getDate();
+        console.log("Day ", date);
+
+        var day = d3.getDay();
+        console.log("Day", day); // 일요일 : 0, 월요일 : 1, 화요일 : 2...
+
+        var hour = d3.getHours();
+        var minute = d3.getMinutes();
+        var second = d3.getSeconds();
+        console.log(hour, minute, second);
+
+        // 글로벌 서비스일 경우에는 접속한 국가의 타임존을 고려
+        // 2024.04.19 15:5:10 (한국) --> 2024.04.19 06:5:10 서버에 저장
+        // 글제목, 작성자, 작성일
+        // 2024.04.19 06:5:10 (영국) 2024.04.19 15:5:10 (한국)
+        // 서버에는 한국 시간대를 자동으로 영국 기준시로 변경해서 저장해야 함.
+        // 서버에 접속한 국가는 각가의 시간대를 + 해야함.
+    </script>
+</body>
+</html>

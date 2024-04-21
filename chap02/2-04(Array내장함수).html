@@ -165,7 +165,19 @@
         });
         console.log(total);
 
-        // ***** map()
+        // ***** map() : filter와는 다른 형으로 새로운 배열을 생성
+        var userList = [
+            {firstName:"재석", lastName:"유", email:"you@gamil.com"},
+            {firstName:"종국", lastName:"김", email:"kim@gamil.com"},
+            {firstName:"세찬", lastName:"양", email:"yang@gamil.com"},
+            {firstName:"석진", lastName:"지", email:"ji@gamil.com"},
+        ];
+
+        var userList2 = userList.map(function(user){   // 이곳
+            return { fullName:user.lastName + user.firstName, FN:user.firstName, LN:user.lastName}
+        });
+
+        console.log(userList2);
 
     </script>
 </body>
