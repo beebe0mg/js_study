@@ -3,6 +3,7 @@
     <title>Date 내장함수</title>
 </head>
 <body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script>
         // var d1 = new Date(); // 오늘 해당을 출력
         // console.log(d1)
@@ -43,6 +44,33 @@
         // 2024.04.19 06:5:10 (영국) 2024.04.19 15:5:10 (한국)
         // 서버에는 한국 시간대를 자동으로 영국 기준시로 변경해서 저장해야 함.
         // 서버에 접속한 국가는 각가의 시간대를 + 해야함.
+
+        var d4 = new Date();
+        console.log(d4.getTimezoneOffset());    // 출력값(분단위) : - 540분 ==> 9시간
+        console.log(d4);    // 출력값(분단위) : - 540분 ==> 9시간
+        
+        // 특정 날짜와 시간을 조정
+        var d5 = new Date();
+        d5.setFullYear(2007);
+        d5.setMonth(7); // 출력값 ==> 8
+        d5.setDate(28);
+        console.log(d5);
+
+        // 실무에서는 moments.js 라이브러리
+        console.log(moment().format('MMMM DD YYYY, h:mm:ss a'))
+        console.log(moment().format('dddd'))
+
+        console.log(moment().format("YYYY-MM-DD"));
+        console.log(moment().format("MMM DD, YYYY"));
+
+        // 오늘을 기준으로 일주일 전을 검색
+        console.log(moment().subtract(7, "days").format("MMM DD, YYYY"));
+        
+        // 오늘을 기준으로 100일 후는 언제일까요?
+        console.log(moment().add(100, "days").format("YYYY-MM-DD"));
+        
+        // 지금을 기준으로 4시간 후
+        console.log(moment().add(4, "hours").format("YYYY-MM-DD HH"));
     </script>
 </body>
 </html>

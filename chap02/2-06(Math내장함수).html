@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Math 내장함수</title>
+</head>
+<body>
+    <script>
+        // Math 수학
+        // round : 반올림, 반내림
+        console.log(Math.round(4.9));
+        console.log(Math.round(4.4));
+        
+        // ceil() : 무조건 올림
+        console.log(Math.ceil(4.9));
+        console.log(Math.ceil(4.4));
+        console.log(Math.ceil(4.1));
+        console.log(Math.ceil(4.0));
+
+        // 게시판에 글이 72건
+        // 한 페이지에 보여지는 글을 10개로 선정
+        // [1][2][3][4][5][6][7][8]
+        console.log(Math.ceil(72/10)); // 출력값 ==> 8
+        console.log(Math.ceil(72/15)); // 출력값 ==> 5
+
+        // floor() : 무조건 내림
+        console.log(Math.floor(9.9));
+        console.log(Math.floor(9.5));
+        console.log(Math.floor(9.1));
+
+        console.log(Math.ceil(-4.4));
+        console.log(Math.floor(-4.4));
+        
+        // trunc() : 정수만 리턴 --> floor와 같은 것 같지만 음수일 땐 달라짐
+        console.log(Math.trunc(9.5));
+        console.log(Math.floor(9.5));
+
+        console.log(Math.trunc(-4.4)); // 출력값 --> -4
+        console.log(Math.floor(-4.4)); // 출력값 --> -5
+
+        // sign() : 음수:-1, 0:0, 양수:1
+        console.log(Math.sign(-7));
+        console.log(Math.sign(13));
+        console.log(Math.sign(0));
+
+        // pow() : 제곱
+        console.log(Math.pow(8, 2))     // 출력값 : 64(8의 2승)
+
+        // sqrt() : 제곱근(루트 씌우는 거)
+        console.log(Math.sqrt(64));     // 출력값 : 8
+
+        // abs() : 절댓값
+        console.log(Math.abs(4.7));
+        console.log(Math.abs(-4.7));
+
+        // max(), min()
+        console.log(Math.min(0, 150, 23, 24, 17, 45, -28, 77));
+        console.log(Math.max(0, 150, 23, 24, 17, 45, -28, 77));
+
+        // random()
+        var x1 = Math.random() ; // 0~1 사이의 임의의 실수를 리턴
+        console.log(x1);
+
+        // 1에서 6사이의 임의의 숫자
+        var x2 = Math.trunc(Math.random() * 6) + 1;
+        var x3 = Math.trunc(Math.random() * 6) + 1;
+        console.log("(" + x2 + ", " + x3 + ")");
+
+        // 임의 정수를 생성해 주는 함수 (암기해도 됨)
+        function getRndInteger(min, max) {
+            return Math.trunc(Math.random() * (max-min+1)) + min;
+        }
+
+        // min = 1, max = 10
+        console.log(getRndInteger(1, 10));
+
+        // min = 23, max = 28
+        console.log(getRndInteger(23, 28));
+    </script>
+</body>
+</html>
