@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>JSON 객체</title>
+</head>
+<body>
+    <script>
+        // 데이터를 저장하고 전송하기 위한 데이터포맷 = JSON / 안드로이드 = XML
+        // 서버에서 클라이언트(PC, 태블릿)로 데이터를 전송할 때 사용
+        // 날씨 정보, 환율 정보, 버스 정보, 지하철 정보
+        // JSON : JavaScript Object Notion의 약자
+        // JSON의 기본 형태 (Object - 배열 - Object)
+        var data = { // {} : Object, [] : 배열
+            "employees" : [ // JSON 형식
+                {"firstName" : "길동", "lastName " : "홍"},
+                {"firstName" : "길순", "lastName " : "김"},
+                {"firstName" : "철수", "lastName " : "최"}
+            ]
+        };
+        console.log(data.employees[0].firstName);
+        
+        // ***** JSON.stringify - object를 string으로 변환해서 출력 
+        console.log(typeof data); // object
+        console.log(typeof JSON.stringify(data)); // string
+        
+        // ***** JSON.parse - string을 object로 변환해서 출력
+        var text = '{ "employees" : [' + // JSON 형식
+            '{"firstName" : "길동", "lastName " : "홍"}, ' +
+            '{"firstName" : "길순", "lastName " : "김"}, ' +
+            '{"firstName" : "철수", "lastName " : "최"}]}';
+
+        console.log(typeof text); // string
+        console.log(typeof JSON.parse(text)); // object
+            
+
+
+    </script>
+</body>
+</html>

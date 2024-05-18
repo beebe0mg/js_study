@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>대소문자 변환</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer = "";
+            for(let i of s) {
+                if(i === i.toUpperCase()) {
+                    answer += i.toLowerCase();
+                }
+                else answer += i.toUpperCase();
+            }
+            return answer;
+        }
+        let str = "Mirim Meister School";
+        console.log(solution(str));
+    </script>
+</body>
+</html>

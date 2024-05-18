@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>가장 긴 문자열 찾기</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer = "";
+            for(let i of s) {
+               if(i.length > s[0].length) answer = i;
+            }
+
+            return answer;
+        }
+        let str = ["teacher", "time", "student", "beautiful", "good"]
+        console.log(solution(str));
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Window 객체</title>
+</head>
+<body>
+    <script>
+        // window 내장 객체
+        // console.log(window);
+        // window.alert("BTS 화이팅");
+        // alert("에러발생"); // window 생략 가능
+    
+        // var yn = confirm("정말로 탈퇴하시겠습니까?");
+        // console.log(yn);
+        
+        // if(confirm("정말로 탈퇴하시겠습니까?")) { // true or false
+        //    // 탈퇴 처리 (예를 누른 것 -> true)
+        //    console.log("회원 탈퇴");
+        // }
+
+        // var txt = prompt("당신이 좋아하는 연예인은? ");
+        // console.log(txt);
+    
+        // if(txt===null) { // 취소
+        //    console.log("취소");
+        // }
+        // else if(txt==="") { // 아무 것도 입력 안 하고 확인
+        //    console.log("공백");
+        // }
+        // else if(txt!=null) { // 입력
+        //    console.log(txt)
+        // }
+
+        // window.open("https://naver.com"); // 팝업창 -> 네이버로 이동
+        // window.print(); // 현재 페이지를 출력
+
+        // setTimeout
+        // setTimeout(function(){}, 원하는 초를 입력)
+        // setTimeout(function(){
+        //    console.log("우리 똥강아지들 따랑해~~ 웩~~~")
+        // }, 3000);
+        
+        // setInterval(function(){}, 2)
+        // var i = 0;
+        // setInterval(function(){
+        //    console.log("사랑해요 BTS : " + i);
+        //    i++;
+        // },3000);
+
+        var i = 0;
+        var fnc = setInterval(function(){
+            console.log("사랑해요 BTS : " + i);
+            i++;
+            if(i===10) {
+                clearInterval(fnc); // 함수 종료!
+            }
+        },3000);
+
+
+    </script>
+</body>
+</html>
