@@ -16,7 +16,7 @@
         console.log(str2);
         let str3 = "저의 이름은 \"홍길동\" 입니다.";
         console.log(str3);
-        let str4 = "저의 이름은 \'홍길동\'입니다.";
+        let str4 = "저의 이름은 \'홍길동\' 입니다.";
         console.log(str4);
         let str5 = "저의 이름은 \홍길동\ 입니다.";
         console.log(str5);
@@ -49,15 +49,15 @@
         
         // 선언과 동시에 초기화
         let person2 = {
-            firstName:"길순",
-            lastName:"홍",
+            firstName:"홍",
+            lastName:"길순",
             age:10
         }
         console.log(person2);
 
         let person3 = {}; // 객체 선언
-        person3["firstName"] = "철수";
-        person3["lastName"] = "김";
+        person3["firstName"] = "김";
+        person3["lastName"] = "철수";
         person3["age"] = 10;
 
         person2.email = "hong@gmail.com"; // 이렇게 멤버변수를 추가해 주면 됨.
@@ -119,8 +119,8 @@
         console.log(arr4[5]);
 
         for(var i=0; i<arr4.length; i++) {
-            console.log(arr4[i]);
-            document.write(arr4[i] + "<br>");
+           console.log(arr4[i]);
+           document.write(arr4[i] + "<br>");
         }
 
         // Boolean 참/ 거짓 - true or false
