@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>가운데 문자 출력하기</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            let answer="";
+            // 내 코드
+            // if(s.length%2===1) {
+            //    answer = s.substring(s.length/2, s.length/2+1);
+            // }
+            // else answer = s.substring(s.length/2-1, s.length/2+1);
+
+            // 쌤 코드 - 방법 1 : substring() 이용
+            // let mid = Math.floor(s.length/2);
+
+            // if(s.length % 2 === 1) answer = s.substring(mid, mid+1);
+            // else answer = s.substring(mid-1, mid+1);
+
+            // 쌤 코드 - 방법 2 : substr() 이용
+            let mid = Math.floor(s.length/2);
+
+            if(s.length % 2 === 1) answer = s.substr(mid, 1);
+            else answer = s.substr(mid-1, 2);
+
+            return answer;
+        }
+        console.log(solution("study"));
+        // console.log(solution("good"));
+    </script>
+</body>
+</html>

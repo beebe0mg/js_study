@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>크롬개발자 도구</title>
+</head>
+<body>
+    <script>
+        console.log("미림마이스터고");      // 출력값
+        console.info("미림마이스터고");     // 정보 (=주석)
+        console.warn("미림마이스터고")      // 경고
+        console.error("미림마이스터고");    // 에러
+
+        var userList = [
+            {firstName : "재석", lastName : "유", email : "yu@gmail.com"},
+            {firstName : "종국", lastName : "김", email : "kim@gmail.com"},
+            {firstName : "세찬", lastName : "양", email : "yang@gmail.com"},
+            {firstName : "석진", lastName : "지", email : "ji@gmail.com"}
+        ];
+
+        // console.log(userList);
+        // console.table(userList);       // 표로 출력
+
+        // function a() {
+        //    console.time();
+        //    
+        //    // insert code
+        //    
+        //    console.timeEnd();
+        // }
+
+        // console.time();
+        // for(let i=1; i<=10000000; i++) {
+        //    console.log("사랑해요 BTS : " + i);
+        // }
+        // console.timeEnd();
+
+        // 출력값에 style을 지정할 수 있음. -- css 적용
+        console.log("안녕하세요? %c미림마이스터고 학생여러분.", "color:yellow;background-color:blue;padding:4px");
+
+    </script>
+</body>
+</html>

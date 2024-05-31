@@ -5,9 +5,18 @@
 <body>
     <script>
         function solution(s) {
-            let answer = "";
-            for(let i of s) {
-               if(i.length > s[0].length) answer = i;
+            let answer = "", max = Number.MIN_SAFE_INTEGER;
+            // 내 코드
+            // for(let i of s) {
+            //   if(i.length > s[0].length) answer = i;
+            // }
+
+            // 쌤 코드
+            for(let x of s) {
+                if(x.length > max) {
+                    max = x.length;
+                    answer = x;
+                }
             }
 
             return answer;
