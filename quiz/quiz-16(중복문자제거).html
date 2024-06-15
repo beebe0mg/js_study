@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>중복 문자 제거하기</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            // let answer = "";
+            // for(let i of s) {
+            //    if(answer.indexOf(i) === -1) answer += i;
+            // }
+
+            // 선생님의 풀이
+            // indexOf() 함수를 이용
+            // console.log(s.indexOf('k')); // 0
+            // console.log(s.indexOf('s')); // 1
+            // console.log(s.indexOf('e')); // 2
+            // console.log(s.indexOf('x')); // -1
+            // console.log(s.indexOf('K')); // -1
+            // console.log(s.indexOf('k', 1)); // 난 k를 찾을 건데 1번 인덱스부터 찾을 거야! 3번에 있는 k를 찾는 방법
+
+            // let answer = "";
+            // for(let i=0; i<s.length; i++) {
+            //    // console.log(s[i], i, s.indexOf(s[i]));
+            //    // i 와 s.indexOf(s[i])의 값이 같지 않으면 중복이고, 같으면 중복이 아니라는 의미임
+            //    if(i===s.indexOf(s[i]))
+            //        answer += s[i];
+            // }
+
+            // let answer = 0;
+            // let word = prompt("찾고자 하는 문자를 입력해 주세요 : ");
+            // for(let i=0; i<s.length; i++) {
+                //    if(word === s[i]) answer++;
+                //    else answer = -1;
+                // }
+                
+            // 선생님 코드
+            // alert("얘들아 이젠 마음을 좀 정해 줘~ 백화점 가자");
+            let answer = 0;
+            let word = prompt("찾고자 하는 문자를 입력해 주세요 : ");
+            let pos = s.indexOf(word);
+
+            while(pos !== -1) {
+                answer++;
+                pos = s.indexOf(word, pos+1); /* pos + 1로 바꿔서 무한루프를 방지하고 pos + 1부터 다시 찾아서 잘 돌아간다 */
+            }
+
+            return answer;
+        }
+        console.log(solution("ksekkset"));
+        // console.log(solution("computer"));
+    </script>
+</body>
+</html>
