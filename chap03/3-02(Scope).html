@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        
+        function myFunction() {
+            // local Scope : 지역변수
+            var carName1 = "기아자동차";    // myFunction 함수 안에서만 사용 가능
+            console.log(carName1);
+        }
+
+        // console.log(carName1);   // 에러 뜸 지역변수는 밖에서 사용할 수 없다. --> ReferenceError
+        myFunction();
+
+        // Global Scope : 전역변수
+        var carName2 = "현대자동차";
+        myFunction2();  // 아직 myFunction2()를 만들지 않아도 결과가 나오지만, 17번째 줄에 쓰면 undefined 뜸, 실행 순서 중요
+
+        function myFunction2() {
+            console.log(carName2);
+        }
+        console.log(carName2);
+
+        // myFunction3();       // 함수가 아닌 변수이기 때문에 안 됨
+        var myFunction3 = function() {  // 이렇게 변수 안에 넣는 것도 가능
+            console.log("myFunction3 호출");
+        }
+
+        myFunction3();
+    </script>
+</body>
+</html>
