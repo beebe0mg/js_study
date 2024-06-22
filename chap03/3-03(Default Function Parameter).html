@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Default Function Parameter</title>
+</head>
+<body>
+    <script>
+        function say1(message) {
+            console.log(message)
+        }
+        say1("무에무에뀽");
+        // say1();  // 메세지에 전달해줄 값이 없어서 undefined 뜸
+
+        function say2(message) {
+            if(message !== undefined) {
+                console.log(message);
+            }
+            else {
+                console.log("매개변수가 없습니다.")
+            }
+        }
+        say2("무에무에뀽");
+        say2();
+
+        function plus1(a, b) {
+            console.log(a+b);
+        }
+        plus1(1, 2);
+        // plus1(1);    // 숫자를 두 개 넣어야하는데 하나 넣어서 NaN 뜸
+
+        // Default Function Parameter
+        function say3(message = "매개변수가 없습니다.") {   // 메세지가 오면 console로 찍고 없으면 "매개변수가 없습니다." 출력
+            console.log(message);
+        }
+        say3("안녕하세요");
+        say3();     // "매개변수가 없습니다." 출력
+
+        function plus2(a=0, b=0) {      // 0으로 초기화해서 에러를 안 나게 함
+            console.log(a+b);
+        }
+        plus2();     
+        plus2(1);    
+        plus2(1, 2);   
+    </script>
+</body>
+</html>
