@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>가산점 계산하기</title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            let answer = 0;
+            // var score = 0;
+            var cnt = 0;
+
+            // for(let i of arr) {
+            //    if(i === 1) {
+            //        score++;    // 만약 i의 값이 1이라면 score++을 해서 answer에 더해줌 그래야 가산점을 계산할 수 있음;
+            //        answer += score;
+            //    }
+            //    else {
+            //        score = 0;  // 0이 나오면 score을 초기화함
+            //    }
+            // }
+
+            for(let x of arr) {
+                if(x===1) {
+                    cnt++;
+                    answer += cnt;
+                }
+                else cnt=0;
+            }
+
+            return answer;
+        }
+        let arr = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+        console.log(solution(arr));
+    </script>
+</body>
+</html>

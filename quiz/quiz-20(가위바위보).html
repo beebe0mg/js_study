@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>가위바위보</title>
+</head>
+<body>
+    <script>
+        function solution(a, b) {
+            // 가위 : 1, 바위 : 2, 보 : 3
+            // let answer = "";
+            
+            // for(let i=0; i<a.length; i++) {
+                // console.log("i = " + i + ", A = " + a[i] + ", B = " + b[i]);
+            //    if(a[i] === b[i])
+            //        answer += "D ";
+            //    else if((a[i] ===1) && (b[i] === 3) || (a[i] === 2) && (b[i] === 1) || (a[i] ===3) && (b[i] === 2))
+            //        answer += "A ";
+            //    else
+            //        answer += "B ";
+
+            let answer = [];
+            for(let i=0; i<a.length; i++) {
+                if(a[i] === b[i])
+                    answer.push("D");
+                else if((a[i] ===1) && (b[i] === 3) || (a[i] === 2) && (b[i] === 1) || (a[i] ===3) && (b[i] === 2))
+                    answer.push("A");
+                else
+                    answer.push("B");
+            }
+
+            return answer;
+        }
+
+        
+        let a = [2, 3, 3, 1, 3];
+        let b = [1, 1, 2, 2, 3];
+
+        for(var x of solution(a, b)) {
+            console.log(x);
+        }
+
+        console.log(solution(a, b));
+    </script>
+</body>
+</html>

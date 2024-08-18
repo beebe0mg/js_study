@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Rest Parameter</title>
+</head>
+<body>
+    <script>
+        function sum1(x1, x2) {
+            var y1 = x1 + x2;
+            console.log(y1);
+            return y1;
+        }
+        
+        // sum1(2, 3);  // 잘 처리됨
+        // sum1(1);    // NaN 뜸
+        // sum1(1, 2, 3);  // 결과값이 이상함 에러가 나야 하는 게 맞지만 유연한 언어라서 처리는 해줌
+        
+        function sum2(x1, x2, x3) {
+            var y2 = x1 + x2 + x3;
+            console.log(y2);
+            return y2;
+        }
+        
+        // sum1(2, 3);     // 값이 맞게 나옴
+        // sum2(1, 2, 3);  // 값이 맞게 나옴
+        
+        function sum3(x1, x2, x3, x4) {
+            var y3 = x1 + x2 + x3 + x4;
+            console.log(y3);
+            return y3;
+        }
+
+        // sum3(1, 2, 3, 4);
+
+        // Rest Parameter --> 함수 매개변수의 개수가 주어지지 않아도 사용할 수 있게 해주는 기능
+        function sum4(...args) {    // 괄호 안에 아무 거나 써도 됨(변수) // 매개변수를 배열로 받음
+            var total = 0;
+            for(var x of args) {
+                total += x;
+            }
+            console.log(total);
+        }
+        
+        // sum4(1);
+        // sum4(2, 3);
+        // sum4(1, 2, 3);
+        
+        function sum5(...args) {
+            var total = 0;
+            args.forEach(function(x, i){   // 배열에서 바로 for문을 적용한 것 --> 자동으로 x가 args를 돌면서 요소를 가져옴, i는 인덱스 번호를 가져옴
+                console.log("i = " + i + ", x = " + x);
+                // total += x;
+            });
+            // console.log(total);
+        }
+        
+        sum5(1);
+        sum5(2, 3);
+        sum5(1, 2, 3);
+    
+    
+    
+    
+    </script>
+</body>
+</html>
