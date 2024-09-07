@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            // let answer = [1, 1, 1, 1, 1];
+			// for(var i=0; i<arr.length; i++) {
+			// 	for(var j=0; j<arr.length; j++) {
+			//		if(arr[i] < arr[j]) answer[i]++;
+			//	}
+			// }
+
+            let n = arr.length;
+            // 배열 사이즈는 n, 이것을 1로 채워준다.
+            let answer = Array.from({length:n}, ()=> 1);
+            for(let i=0; i<n; i++) {
+                for(let j=0; j<n; j++) {
+                   if(arr[j] > arr[i]) answer[i]++; 
+                }
+            }
+
+            return answer;
+        }
+        let arr = [87, 89, 92, 100, 76]
+        console.log(solution(arr));
+    </script>
+</body>
+</html>

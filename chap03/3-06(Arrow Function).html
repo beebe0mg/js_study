@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        function hello1() {
+            console.log("Hello World1");
+            return "헬로우 월드1";
+        }
+
+       //  hello1();
+
+        console.log(hello1());
+        // 리턴 받은 것을 찍으라고 하니 리턴값이 없어서 에러
+        // 9번 줄에 리턴 값 넣어주면 제대로 실행
+
+        var hello2 =function() {
+            console.log("Hello World2");
+            return "헬로우 월드2";
+        }
+
+        hello2(); // 함수 호출 함수 내의 console.log 출력
+        console.log(hello2()) // 리턴값 출력
+        
+        // => arrow function
+        var hello3 = () => {
+            console.log("Hello World3");
+            return "헬로우 월드3";
+        }
+
+        hello3()
+        console.log(hello3()) // 리턴값 출력
+        
+        var hello4 = () => {
+            return "헬로우 월드4";
+        }
+    
+        console.log(hello4())
+        // 만약 함수 내에 console.log 없으면 출력값이 그냥 빈 칸 뜸
+
+        var hello4 = () => "헬로우 월드4"
+        console.log(hello4())
+
+        var hello5 = (name) => {
+            return "헬로우 월드5" + " " + name;
+        }
+
+        console.log(hello5("홍길동"));
+
+        var hello6 = (name) => "헬로우 월드6" + " " + name;
+        console.log(hello6("홍길동"));
+        
+        var hello7= (firstName, lastName) => "헬로우 월드7" + " " + lastName + firstName;
+        console.log(hello7("길동", "홍"));
+
+        // 파라미터가 하나일 때는 괄호 안 써도 됨
+        var hello8 = name => "헬로우 월드8" + " " + name;
+        console.log(hello8("홍길동"));
+    </script>
+</body>
+</html>

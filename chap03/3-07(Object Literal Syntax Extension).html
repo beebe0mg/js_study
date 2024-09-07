@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Object Literal Syntax Extension</title>
+</head>
+<body>
+    <script>
+
+        // var person = {
+        //    firstName : "길동",
+        //    lastName : "홍"
+        // }
+
+        // console.log(person)
+
+        // 이러한 구조를 동적이라고 함.
+        // person 안에서 바꿔주지 않고 밖에서 변수로 지정
+        var first = "";
+        var last = "";
+
+        var person = {
+            firstName : first,
+            lastName : last
+        }
+        console.log(person);
+
+        // 오브젝트(객체)의 key 값을 동적으로 할당해 주는 것 = Object Literal Syntax Extension
+        // 키 값을 간편하게 변경 -> 수업의 핵심
+        var type1 = "name";
+        var type2 = "age";
+        var score = {
+            [type1] : "홍",
+            [type2] : 23
+        }
+
+        console.log(score);
+        
+        // 이렇게 바로 추가도 가능함
+        score.grade = 2;
+        console.log(score);
+        
+        var type3 = "성적";
+        score[type3] = 2;
+        console.log(score);
+
+    </script>
+</body>
+</html>
