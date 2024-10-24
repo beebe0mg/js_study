@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>자바스크립트 작성 위치</title>
+</head>
+<body>
+    <script>
+        // Spread Operator : 분해 기능
+        // 배열 중간에 원하는 값을 넣을 수 있는 기능
+        var arr1 = [4, 5, 6];
+        var arr2 = [1, 2, 3];
+        var arr3 = arr1.concat(arr2);
+        console.log(arr3);
+
+        var arr4 = [4, 5, 6];
+        // var arr5 = [1, 2, 3, ...arr4];  // 분해하였다.... arr4 를... 분해하였다...
+        var arr5 = [1, 2, ...arr4, 3];  // String 도 어떤 타입도 전부 배열 중간에 넣을 수 있음
+        console.log(arr5);
+
+        var arr7 = [4, 5, 6];
+        var arr8 = [1, 2, 3];
+        var arr9 = [...arr8, ...arr7];
+        console.log(arr9);
+
+        var str = "CDEFG"
+        var alphabet = ['A', 'B', ...str];
+        // ...str 을 하면 str 이 전부 분해되기 때문에 길이가 7이다.
+        // str 을 하면 str 이 분해되지 않고 그대로 들어가기 때문에 길이는 3이다.
+        console.log(alphabet);
+
+
+    </script>
+</body>
+</html> 

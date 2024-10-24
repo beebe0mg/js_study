@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>회문 문자열</title>
+</head>
+
+<body>
+    <script>
+        function solution(str) {
+            let answer = "YES";
+            str = str.toLowerCase();    // str.toUpperCase() 로 해도 상관 없음! 왜냐하면 대소문자 구분 안 하니까유~!
+
+            // 방법1 : 직접 비교
+            // let len = str.length;
+            // for (let i = 0; i < Math.floor(len / 2); i++) {
+            //     if (str[i] !== str[len - i - 1]) return "NO";
+            // }
+            // return answer;
+
+            // 방법2 : reverse()
+            // console.log(str.split('').reverse().join(''));
+            if(str !==str.split('').reverse().join('')) 
+                answer = "NO";
+
+            return answer;
+            
+        }
+
+        // let str = "gooG"
+        let str = "student"
+        console.log(solution(str));
+    </script>
+</body>
+
+</html>

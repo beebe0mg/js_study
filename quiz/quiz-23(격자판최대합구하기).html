@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>격자판최대합구하기</title>
+</head>
+<body>
+    <script>
+        function solution(arr) {
+            let answer = Number.MIN_SAFE_INTEGER;
+            let n = arr.length  // n = 5
+            let sum1 = 0
+            let sum2 = 0;
+            
+            for(let i=0; i<n; i++) {
+                sum1 = sum2 = 0;       // sum1 에 += 을 해주기 때문에 돌 때마다 0으로 초기화해서 다시!
+                for(let j=0; j<n; j++) {
+                    sum1 += arr[i][j];          // 행을 한 줄씩 더하긔 ㅎ
+                    sum2 += arr[j][i];          // 열을 한 줄씩 더하긔 ㅎ
+                }
+                // console.log(sum1);
+                // console.log(sum2);
+                answer = Math.max(answer, sum1, sum2);
+            }
+            
+            // \ 이렇게 내려가는 대각선 구하기
+            sum1 = sum2 = 0;    // 지역변수이므로 위의 for 문에서 사용해 줬다고 해도 나오면 다시 초기화 됨
+            for(let i=0; i<n; i++) {
+                sum1 += arr[i][i];
+                sum2 += arr[i][n-i-1];      // 암기... / 이렇게 대각선 구하는 공식임
+            }
+            // console.log(sum1);
+            // console.log(sum2);
+            answer = Math.max(answer, sum1, sum2);
+
+            return answer;
+        }
+        
+        let arr = [
+                [10, 13, 10, 12, 15],
+                [12, 39, 30, 23, 11],
+                [11, 25, 50, 53, 15],
+                [19, 27, 29, 37, 27],
+                [19, 13, 30, 13, 19]
+        ]
+        console.log(solution(arr));
+    </script>
+</body>
+</html>

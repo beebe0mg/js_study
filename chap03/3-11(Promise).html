@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Promise</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        // var x = 1;
+        // var y = callServerData();
+        // var z = x + y;
+        // console.log(z); // 서버로부터 y 값을 받아오기 전에 실행되면 에러가 발생
+
+        var url = "https://78aeb894-7efa-4ce7-a6fe-5ef1b0f62dab.mock.pstmn.io/productList";
+    
+        // var data = axios.get(url) .then(function (response) {
+        //    console.log(response.data);
+        //    return response.data;
+        // });
+        
+        function getData() {
+            
+            // 정상적으로 작동되면 resolve 에 들어감
+            // 정상적으로 데이터를 가져오지 못하면 reject 에 들어감
+            // Promise 를 사용하면 값을 가져올 때까지 기다리고 가져오면 then 을 실행하는 것임
+            return new Promise(function(resolve, reject) {
+
+                axios.get(url) .then(function (response) {
+                    console.log(response.data);
+                    resolve(response.data);
+                    // reject(response.data);
+                });
+            });
+        }
+
+        // data 라는 변수에 집어넣기 전(15-18 줄을 실행하기 전)에 시작하기 때문에 에러가 남
+        // var total = 0;
+        // for(var item of data) {
+        //    total += item.price;
+        // }
+        // console.log(total);
+
+        var total = 0;
+
+        // getData 에 Promise 가 있으니까 위 코드가 실행되고 then 이 실행됨
+        // resolve(response.data); 이게 function(data) 여기 안으로 들어감 잘 작동되면
+        getData().then(function(data){
+            for(var item of data.products) {
+                total += item.price;
+            }
+            console.log(total);
+        });
+
+    
+    </script>
+</body>
+</html>

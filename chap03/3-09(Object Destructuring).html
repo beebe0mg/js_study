@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Object Destructuring</title>
+</head>
+<body>
+    <script>
+        function getPerson() {
+            return {
+                firstName : "길동",
+                lastName : "홍",
+                age : 23,
+                email : "Hong@gmail.com",
+                city : "Seoul",
+                country : "Chosun"
+            }   // Object 리턴할 것임. 중괄호
+        }
+
+        // 여기에서 per 에 대입을 해 줘야 함
+        // 그냥 getPerson(); 이라고 호출해 주면 아무 것도 안 나옴
+        // 무조건 변수에 넣은 후, 변수에서 출력
+        var per = getPerson();
+        console.log(per);
+        console.log(per.firstName);
+        console.log(per.lastName);
+
+        // 나는 firstName 이랑 lastName 밖에 필요하지 않은데 getPerson() 을 전부 부르니까 너무 그래ㅠㅠ
+        // 이렇게 하면.... 딱 내가 원하는 거 두 개만 가져올 수 있음
+        var {firstName, lastName} = getPerson();
+        console.log(firstName);
+        console.log(lastName);
+        // console.log(city);       --- 안 가지고 온 건 에러 발생
+
+    </script>
+</body>
+</html>

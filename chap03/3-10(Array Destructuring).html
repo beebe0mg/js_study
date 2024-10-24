@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Array Destructuring</title>
+</head>
+<body>
+    <script>
+        function getScores() {
+            return [70, 80, 90];
+        }
+
+        // var scores = getScores();
+        // console.log(scores);
+        // console.log(scores[0]);
+        // console.log(scores[1]);
+        // console.log(scores[2]);
+
+        // Array Destructuring
+        // var [x, y, z] = getScores();
+        // console.log(x);
+        // console.log(y);
+        // console.log(z);
+
+        // 앞에서부터 두 개만 가져옴
+        var [x, y] = getScores();
+        console.log(x);
+        console.log(y);
+
+        function getLocations() {
+            // 위도(latitude), 경도(longitude)
+            return [123.12, 23.023];
+        }
+
+        var [latitude, longitude] = getLocations();
+        console.log(latitude);
+        console.log(longitude)
+
+    </script>
+</body>
+</html>

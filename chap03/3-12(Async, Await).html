@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Async, Await</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        var url = "https://78aeb894-7efa-4ce7-a6fe-5ef1b0f62dab.mock.pstmn.io/productList";
+        
+        // Async, Await 와 비교용
+        /*
+        function getData() {
+            return new Promise(function(resolve, reject) {
+                axios.get(url) .then(function (response) {
+                    console.log(response.data);
+                    resolve(response.data);
+                    // reject(response.data);
+                });
+            });
+        }
+
+        var total = 0;
+        getData().then(function(data){
+            for(var item of data.products) {
+                total += item.price;
+            }
+            console.log(total);
+        });
+        */
+
+        // Async / Await 방식
+        // 이 둘은 항상 짝궁임 같이 써 줘야 함
+        async function getData2() {
+            // response 가 가져오고..... await 로 기다리라고 해주고...
+            return (await axios.get(url)).data;
+        }
+
+        async function calculateSum() {
+            // await 때문에 위 코드가 실행돼야 이것도 실행됨
+            var data = await getData2();
+            var total = 0;
+            for(var item of data.products) {
+                total += item.price;
+            }
+            console.log(total)
+        }
+
+        calculateSum();
+
+    
+    </script>
+</body>
+</html>
