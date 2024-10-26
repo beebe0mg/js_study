@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>회문 문자열</title>
+</head>
+
+<body>
+    <script>
+        function solution(str) {
+            let answer = "YES";
+            // 정규표현식!~
+            str = str.toLowerCase().replace(/[^a-z]/g,"");
+            console.log(str);
+
+            let len = str.length;
+            for (let i = 0; i < Math.floor(len / 2); i++) {
+                if (str[i] !== str[len - i - 1]) return "NO";
+            }
+            return answer;
+
+        }
+
+        // let str = "gooG"
+        let str = "found77, Time^ study, Yduts; emit, 9Dnuof";
+        console.log(solution(str));
+    </script>
+</body>
+
+</html>

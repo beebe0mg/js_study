@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>module</title>
+</head>
+<body>
+    <!-- 이 방식은 코드를 전부 가져오는 방식임, 나는 두 개만 필요해도 수백 개면 수백 개를 전부 가져옴. 비효율적 -->
+    <!-- <script src="/scripts/3-13(module).js"></script>
+    <script>
+        log("나야~~ 들기름~~");
+        error("당신은 탈락입니다.");
+    </script> -->
+
+
+    <!-- 이렇게 하면 훨씬 효율적임 -->
+    <!-- <script type="module">
+        import {log, error} from "/scripts/3-13(module).js"
+        // log 와 error 는 함수 이름임 헷갈리지 말 것
+        log("나야~~ 들기름~~");
+        error("당신은 탈락입니다.");
+    </script> -->
+
+    <!-- <script type="module">
+        import {error} from "/scripts/3-13(module).js"
+        error("당신은 탈락입니다.");
+    </script> -->
+
+    <!-- <script type="module">
+        import {log, error, PI} from "/scripts/3-13(module).js";
+            log(PI);
+            log("나야~~ 들기름~~");
+            error("당신은 탈락입니다.");
+    </script> -->
+
+    <script src="/scripts/3-13(ref).js" type="module">
+
+    </script>
+</body>
+</html>

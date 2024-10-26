@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>숫자만 추출</title>
+</head>
+<body>
+    <script>
+        function solution(str) {
+            
+            // 방법 1. parseInt() 사용
+            // let answer = "";
+            // for(let x of str) {
+                // 숫자가 아닌 게 아닌 것을 찍음 -> 즉 숫자를 찍음
+            //    if(!isNaN(x)) {
+            //        console.log(x);
+            //        answer += x;
+            //    }
+            // }
+            // return parseInt(answer);
+            
+            // 방법 2. parseInt() 함수 사용 금지
+            // let answer = 0;
+            // for(let x of str) {
+            //    if(!isNaN(x)) {
+            //        answer = answer * 10 + Number(x);
+            //    }
+            // }
+
+            // 방법 3. 정규 표현식
+            let answer = Number(str.replace(/[^0-9]/g,''));
+
+            return answer;
+        }
+        let str = "g0en2T0s8eSoft";
+        console.log(solution(str));
+    </script>
+</body>
+</html>

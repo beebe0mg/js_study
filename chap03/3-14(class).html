@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>클래스(class)</title>
+</head>
+<body>
+    <script>
+        // 클래스 : 객체를 생성하기 위한 틀, 설계도
+        // 자동차 클래스
+
+        class Car {   
+            constructor(modelName, modelYear, type, price) {
+                this.modelName = modelName;
+                this.modelYear = modelYear;
+                this.type = type;
+                this.price = price;
+            }
+
+            getModelName() {
+                return this.modelName;
+            }
+            
+            getModelYear() {
+                return this.modelYear;
+            }
+
+            getType() {
+                return this.type;
+            }
+
+            getPrice() {
+                return this.price;
+            }
+
+            setPrice(price) {
+                this.price = price;
+            }
+        } // Car
+
+        // Car car = new Car("아이오닉", "2021", "e", 4000); -- 자바 방식
+        let car = new Car("아이오닉", "2021", "e", 4000);   // 자바 스크립트 방식
+        console.log(car.getModelName());
+        console.log(car.getModelYear());
+        console.log(car.getPrice());
+        car.setPrice(3500);
+        console.log(car.getPrice());
+        
+    </script>
+</body>
+</html>
