@@ -37,13 +37,46 @@
         } // Car
 
         // Car car = new Car("아이오닉", "2021", "e", 4000); -- 자바 방식
-        let car = new Car("아이오닉", "2021", "e", 4000);   // 자바 스크립트 방식
-        console.log(car.getModelName());
-        console.log(car.getModelYear());
-        console.log(car.getPrice());
-        car.setPrice(3500);
-        console.log(car.getPrice());
-        
+        // let car = new Car("아이오닉", "2021", "e", 4000);   // 자바 스크립트 방식
+        // console.log(car.getModelName());
+        // console.log(car.getModelYear());
+        // console.log(car.getPrice());
+        // car.setPrice(3500);
+        // console.log(car.getPrice());
+
+        // let car2 = new Car("옵티마", "2000", "g", 2000);
+        // console.log(car2.getModelName());
+        // console.log(car2.getModelYear());
+        // console.log(car2.getPrice());
+        // car2.setPrice(100);
+        // console.log(car2.getPrice());
+
+        class ElectronicCar extends Car {
+            // 전기차는 type 받을 필요 없음
+            constructor(modelName, modelYear, price, time) {
+                // 전기차는 type 이 무조건 e 임
+                super(modelName, modelYear, "e", price);
+                this.time = time
+            }
+
+            getTime() {
+                return this.time;
+            }
+
+            setTime(time) {
+                this.time = time;
+            }
+        }
+
+        let eleCar1 = new ElectronicCar("아이오닉2", "2023", 4800, 60);
+        console.log(eleCar1.getModelName());
+        console.log(eleCar1.getModelYear());
+        console.log(eleCar1.getPrice());
+        console.log(eleCar1.getType());
+        eleCar1.setTime(30);
+        console.log(eleCar1.getTime());
+
+
     </script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Try Catch finally</title>
+</head>
+<body>
+    <script>
+        // console.log("log 메세지");
+        // console.log("안녕하세요?");
+        // try {
+        //  이건 지금 consol 이라고 일부러 쓴 거임
+        //  consol.log("log 메세지");
+        // }
+        // catch(err) {
+        //    console.log(err.name);
+        //    console.log(err.message);
+        // }
+        // console.log("안녕하세요?");
+
+        // throw 를 사용하여 강제로 예외를 발생시킴
+        // 정상적으로 숫자를 입력해 주면 throw 실행 안 시킴! 올바른 값이 나옴
+        var x = "";
+
+        try {
+            if(x==="") throw "empty";
+            var y = x + 3;
+            console.log(y);
+        } catch(err) {      // err 에 empty 가 들어옴
+            console.log(`x is ${err}`);
+        }
+        finally {
+            console.log("exception 유무와 상관없이 무조건 실행됨.");
+        }
+
+
+    </script>
+</body>
+</html>
