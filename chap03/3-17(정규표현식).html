@@ -80,9 +80,31 @@
         // 앞에는 1로 시작하고 뒤에 0은 없거나 하나만 있는 걸 출력
         var patt9 = /10?/g;     // 1, 10, 10, 1, 1, 1, 1
         console.log(str11.match(patt9));
+
+        // /^\ : 이 뒤로 w 오면 무조건 문자로 시작, d 오면 무조건 숫자로 시작
+        // $ : 정규표현식의 끝 표시
+
+        // 실무 예 : 우편번호 5자리
+        // 32543 : 다섯 자리인지 판별, 다섯 자리 모두가 숫자인지 판별
+        var patt10 = /\d{5}/;        // 숫자 다섯 자리
+        var postalCode = "23452";    // true 나옴, 문자 중간에 들어오면 false 나옴
+        var postalCode = "P234521111";  // 이것도 true 가 나옴. 왜냐하면 그냥 연속된 숫자 5개만 나오면 true 를 출력해주기 때문에
+        console.log(patt10.test(postalCode));
         
+        var patt11 = /^\d{5}$/;  // 첫글자가 숫자 다섯 개로 시작해야 함, 끝을 $ 로 표시
+        var postalCode = "23452";   
+        var postalCode = "234521111";   // 이것도 false 나옴  
+        // var postalCode = "P234521111";  // false 나옴.
+        console.log(patt11.test(postalCode));
 
+        // 핸드폰 번호 : 010-1234-5678
+        var patt12 = /^(010)-\d{4}-\d{4}$/
+        var tel = "010-1234-5678"
+        console.log(patt12.test(tel));
 
+        // 이메일주소 : gtgyujung@gmail.com
+        var patt13 = /^\w+([._-]?\w+)*@\w+(\.\w{2,3})+$/;
+        console.log(patt13.test("gtgyujung@gmail.com"));
 
 
     </script>

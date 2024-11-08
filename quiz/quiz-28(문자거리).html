@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>문자거리</title>
+</head>
+<body>
+    <script>
+        function solution(s, t) {
+            let answer = [];
+            let p = 1000    // 임의의 숫자
+
+            // 왼쪽부터 거리의 크기를 배열에 넣음
+            for(let x of s) {
+                if(x === t) {
+                    p = 0;
+                    answer.push(p);
+                }
+                else {
+                    p++;
+                    answer.push(p);
+                }
+            }
+
+            // 오른쪽부터 거리의 크기를 구한 뒤, 왼쪽 값과 비교하여 작은 값을 배열에 넣음.
+            p = 1000;
+
+            for(let i=s.length-1; i>=0; i--) {
+                if(s[i] === t) {
+                    p = 0;
+                }
+                else {
+                    p++;
+                    answer[i] = Math.min(answer[i], p)
+                }
+            }
+
+            return answer;
+        }
+
+        let str = 'teachermode';
+        console.log(solution(str, 'e'));  // [1, 0, 1, 2, 1, 0, 1, 2, 2, 1, 0]
+    </script>
+</body>
+</html>
