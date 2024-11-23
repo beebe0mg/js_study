@@ -3,53 +3,54 @@
     <title>HTML Element 컨트롤</title>
 </head>
 <body>
+
     <input type="text" id="text1" value="홍길동">
     <br>
+    관심사 : 
     <br>
-    관심사 :
+    <input type="checkbox" name="chk" value="It"> IT 컴퓨터
+    <input type="checkbox" name="chk" value="Enter"> 엔터테이먼트
+    <input type="checkbox" name="chk" value="Sports"> 스포츠
+    <input type="checkbox" name="chk" value="Shopping"> 쇼핑
+    <input type="checkbox" name="chk" value="Book"> 도서/책
     <br>
-    <input type="checkbox" name="chk" value="IT">IT / 컴퓨터
-    <input type="checkbox" name="chk" value="ENTER">엔터테인먼트
-    <input type="checkbox" name="chk" value="SPORTS">스포츠
-    <input type="checkbox" name="chk" value="SHOPPING">쇼핑
-    <input type="checkbox" name="chk" value="BOOK">도서/책
-    <br>
+    <input type="radio" name="gen">남자
+    <input type="radio" name="gen" checked>여자
     <br>
     <input type="button" onclick="choi()" value="클릭">
 
-
     <script>
-        document.getElementById("text1").value = "이순신";
-
-        function choi() {
-            // alert("무야무야꿍")
+        document.getElementById('text1').value = "이순신";
+        function choi(){
+            // alert("무야무야꿍");
             // console.log("버튼 클릭");
-
             console.log("[클릭] 버튼 클릭");
-            // var txt1 = document.getElementById("text1");
-            // console.log(txt1);
-            // console.log(txt1.value);
+            var txt1 = document.getElementById('text1');
+            console.log(txt1.value);
+            console.log(txt1);
 
             // jQuery 방식
-            var txt2 = document.querySelector("#text1");
+            var txt2 = document.querySelector('#text1');
             console.log(txt2);
             console.log(txt2.value);
 
-            // var check_box = document.getElementsByName("chk")
-            // console.log(check_box);
+            var check_box = document.getElementsByName('chk');
+            console.log(check_box);
 
-            // for(var i=0; i<check_box.length; i++) {
-            //    if(check_box[i].checked) {
-            //        console.log(check_box[i].value);
-            //    }
-            // }
+            for(var i=0; i<check_box.length; i++){
+                if(check_box[i].checked){
+                    console.log(check_box[i].value);
+                }
+            }
             
-            //jQuery 방식
-            var check_box1 = document.querySelectorAll("chk");
+            var check_box1 = document.querySelectorAll('[name=chk]:checked');
             console.log(check_box1);
-
             
-
+            for(var i=0; i<check_box1.length; i++){
+                if(check_box1[i].checked){
+                    console.log(check_box1[i].value);
+                }
+            }
         }
     </script>
 </body>
