@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>자릿수의 합</title>
+</head>
+<body>
+    <!-- 문제 : N개의 자연수가 입력되면 각 자릿수의 합을 구하고, 그 합이 최대인 자연수를 출력하시요. 단 자릿수의 합이 같은 경우에는 큰 숫자를 출력할 것!
+         (만약 235와 1234 두 숫자가 자릿수의 합이 10으로 같을 경우에는 큰 수인 1234를 출력한다.) -->
+    <!-- 입력 : 첫 줄에 N개의 자연수가 주어진다. -->
+    <!-- 출력 : 자릿수의 합이 최대인 자연수를 출력한다. -->
+    <!-- 입력 예시 : 7 460 128 603 40 521 137 123 1200 -->
+    <!-- 출력 예시 : 137 -->
+    <script>
+        function solution(arr){
+            let answer = 0, max=Number.MIN_SAFE_INTEGER;
+
+            for(let x of arr){
+                // 방법1 : while문 이용
+                // let sum=0, temp=x;
+                // while(temp){
+                //     sum += (temp%10);
+                //     temp = Math.floor(temp/10)
+                // }
+
+                // 방법2 : 내장함수 사용
+                //                                                             , a의 초기값 0을 준다
+                let sum = x.toString().split('').reduce((a,b) => a + Number(b) , 0);
+
+                if(sum>max){
+                    max = sum;
+                    answer = x;
+                }
+                else if(sum === max){
+                    if(answer < x){
+                        answer = x;
+                    }
+                }
+            }
+
+            return answer;
+        }
+
+        let arr = [7, 460, 137, 603, 40, 521, 128, 123, 1200];
+
+
+        console.log(solution(arr));
+    </script>
+</body>
+</html>
