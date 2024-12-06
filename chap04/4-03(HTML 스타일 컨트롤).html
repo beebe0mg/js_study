@@ -1,0 +1,93 @@
+<html>
+<head>
+    <title>HTML 스타일 컨트롤</title>
+
+    <style>
+        .border-red {
+            border: 3px dashed red;
+        }
+
+        .border-green {
+            border: 3px solid green;
+        }
+
+        .border-default {
+            border: 3px solid blue;
+        }
+
+    </style>
+</head>
+<body>
+    Text :
+    <br>
+    <input type="text" id="text1" onblur="changeColor()">
+    <br>
+    Radio(이메일 수신):
+    <input type="radio" name="radio_yn" onclick="showEmail()">동의
+    <input type="radio" name="radio_yn" onclick="hideEmail()">비동의
+    <div id="divEmail" style="display:none">
+        이메일 <input type="text" id="email"> 
+    </div>
+    <br>
+    <br>
+    <select onchange="doChange(this)">
+        <option value="KO">한국</option>
+        <option value="CH">중국</option>
+        <option value="JP">일본</option>
+    </select>
+
+    <select id="select2" style="display: none;">
+        <option>서울</option>
+        <option>대전</option>
+        <option>대구</option>
+        <option>천안</option>
+    </select>
+
+    <br>
+    <br>
+    <input type="button" value="회원가입" onclick="doSave()">
+
+    <script>
+
+        function changeColor() {
+            console.log("changeColor() 호출");
+            var txt1 = document.getElementById("text1");
+            console.log(txt1.value);
+            if(txt1.value==='green') {
+                txt1.className = "border-green";
+            }
+            else if(txt1.value==='red') {
+                txt1.className = "border-red";
+            }
+            else {
+                txt1.className = "border-default"
+            }
+        }
+
+        function showEmail() {
+            document.getElementById("divEmail").style.display = "";
+        }
+
+        function hideEmail() {
+            document.getElementById("divEmail").style.display = "none";
+        }
+
+        function doChange(obj) {
+            console.log(obj.value);
+            if(obj.value === "KO")
+                document.getElementById("select2").style.display = "";
+                else
+                document.getElementById("select2").style.display = "none";
+        }
+
+        function doSave() {
+            var txt2 = document.getElementById("text1");
+            if(txt2.value === "") {
+                txt2.className = "border-red"
+                return alert("필수 값을 입력해 주세요.");
+            }          
+        }
+
+    </script>
+</body>
+</html>

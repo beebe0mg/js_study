@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="4-02.css">
+    <title>HTML 이벤트 핸들러</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="text1" onfocus="doFocus()" onblur="doBlur(this)">
+        <select name="" id="select1" onchange="doChange(this)">
+            <option value="KO">한국</option>
+            <option value="CH">중국</option>
+            <option value="JP">일본</option>
+        </select>
+        <input class="button" type="button" value="클릭" onclick="doClick()">
+        KeyDown : 
+        <input type="text" id="text2" onkeydown="doKeyDown(event)">
+        <input type="button" value="조회" onclick="doSearch()">
+    </div>
+    <script>
+        function doClick() {
+            alert("하이");
+        }
+        function doFocus() {
+            console.log("입력할거야????");
+        }
+        function doBlur(obj) {
+            console.log("입력 안할거야????");
+            if(obj.value === "") alert("아무것도 입력 안했잖아!!!!");
+        }
+        function doChange(selectThis) {
+            // console.log("선택할거야????");
+            // var select = document.getElementById("select1");
+            console.log(selectThis.value);
+        }
+        function doKeyDown(event) {
+            // console.log("안녕안녕 키보드 왜쳐????");
+            console.log(event);
+            if (event.keyCode === 13) console.log("Enter 눌렀네????");
+            doSearch();
+        }
+        function doSearch() {
+            console.log("조회 시작!!!!!");
+        }
+        따라 쳐라
+    </script>
+</body>
+
+</html>
