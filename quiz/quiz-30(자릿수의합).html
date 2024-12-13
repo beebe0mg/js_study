@@ -10,39 +10,40 @@
     <!-- 입력 예시 : 7 460 128 603 40 521 137 123 1200 -->
     <!-- 출력 예시 : 137 -->
     <script>
-        function solution(arr){
-            let answer = 0, max=Number.MIN_SAFE_INTEGER;
+        // N개의 자연수가 입력되면 각 자릿수의 합을 구하고, 그 합이 최대인 자연수를 출력하세요 
+        function solution(arr) {
+            let answer = 0, max = Number.MIN_SAFE_INTEGER;
 
-            for(let x of arr){
-                // 방법1 : while문 이용
-                // let sum=0, temp=x;
-                // while(temp){
-                //     sum += (temp%10);
-                //     temp = Math.floor(temp/10)
+            for (let x of arr) {
+                // 방법 1 : while문 이용
+                // let sum = 0, temp = x;
+                // while (temp) {
+                //     sum += (temp % 10);
+                //     temp = Math.floor(temp / 10);
                 // }
 
-                // 방법2 : 내장함수 사용
-                //                                                             , a의 초기값 0을 준다
-                let sum = x.toString().split('').reduce((a,b) => a + Number(b) , 0);
+                // 방법 2 : 내장함수 사용                                       // 0이 있으면 이게 초기값
+                let sum = x.toString().split('').reduce(a, b => a + Number(b), 0); // a,는 원래는 '4' 6에는 Number를 씌워서 숫자가 됨 근데 처음이 문자라 문자가 됨 그래서 0을 써주게 되면 a는 0이 되고 b가 4가 돼서
+                console.log(sum);
 
-                if(sum>max){
+                // >=에서 =이 없으면 128나옴
+                if (sum > max) {
                     max = sum;
                     answer = x;
                 }
-                else if(sum === max){
-                    if(answer < x){
-                        answer = x;
-                    }
+                else if (sum === max) {
+                    if (x > answer) answer = x;
                 }
+
+                // answer = max;
+
             }
 
             return answer;
         }
-
-        let arr = [7, 460, 137, 603, 40, 521, 128, 123, 1200];
-
-
+        let arr = [7, 460, 128, 603, 40, 521, 137, 123, 1200];
         console.log(solution(arr));
     </script>
 </body>
-</html>
+
+</html>a

@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>데이터테이블 만들기</title>
+</head>
+<body>
+    <input type="text" id="searchTxt" onkeydown="checkEnter(event)">
+    <input type="button" value="조회" onclick="doSearch()">
+
+    <br>
+    <br>
+
+    <table id="tb" border="1">
+        <thead>
+            <tr>
+                <th onclick="doSort('name')">이름</th>
+                <th onclick="doSort('email')">이메일</th>
+                <th onclick="doSort('company')">회사</th>
+                <th onclick="doSort('address')">주소</th>
+            </tr>
+        </thead>
+       <tbody></tbody>
+    </table>
+
+    <script src="/scripts/4-04.user_data.js"></script>
+
+    <script>
+        // console.log(userList);
+        var currentData = [];
+
+        function doSort(key) {
+            // console.log(key);
+            currentData.sort(function(a, b) {
+                return (a[key] > b[key]) ? 1 : a[key] < b[key] ? -1 : 0;
+            });
+
+            renderTable(currentData);
+        }
+
+        function doSearch() {
+            var search_txt = document.getElementById("searchTxt").value;
+            // console.log(search_txt);
+
+            if(search_txt==="") {
+                currentData = userList;
+                renderTable(userList);
+            }
+            else {
+                // alert("무언가 내용을 입력함.");
+                // console.log(search_txt)
+                // /pattern/gi
+                var regExp = new RegExp(search_txt, "i");
+                var data = userList.filter( item => {
+                    if(regExp.test(item.name)) {
+                        return true
+                    }
+                    else if(regExp.test(item.email)) {
+                        return true
+                    }
+                    else if(regExp.test(item.company)) {
+                        return true
+                    }
+                    else if(regExp.test(item.address)) {
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                });
+                currentData = data;
+                renderTable(data);
+            } 
+        } // doSearch()
+
+        function renderTable(data) {
+            var h = [];
+            data.forEach( item => {
+                h.push(`<tr>`);
+                h.push(`<td>${item.name}</td>`);    
+                h.push(`<td>${item.email}</td>`);    
+                h.push(`<td>${item.company}</td>`);    
+                h.push(`<td>${item.address}</td>`);    
+                h.push(`</tr>`);
+            });
+            // console.log(h.join(""));
+            document.querySelector("#tb>tbody").innerHTML = h.join("");
+
+        }
+
+        function checkEnter(event) {
+            // console.log(event);
+            if(event.keyCode === 13) doSearch();
+        }
+
+
+    </script>
+
+</body>
+</html>
